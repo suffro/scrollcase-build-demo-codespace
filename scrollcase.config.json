@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "paths": {
+    "scrolls": "scrolls",
+    "build": ".scrollcase/build",
+    "dist": ".scrollcase/dist",
+    "keys": ".scrollcase/keys",
+    "toolchain": ".scrollcase/toolchain"
+  },
+  "toolchain": {
+    "pixi": {
+      "version": "0.73.0",
+      "assets": {
+        "pixi-x86_64-unknown-linux-musl.tar.gz": "682564e7cd35d38307df3cd6c8e9a45a1437d20febac0c8d165809d7c38408d1"
+      }
+    },
+    "condaPack": {
+      "version": "0.9.2"
+    }
+  }
+}

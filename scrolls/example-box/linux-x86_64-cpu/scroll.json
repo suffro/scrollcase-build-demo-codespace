@@ -1,0 +1,46 @@
+{
+  "$schema": "https://scrollcase.dev/schema/v2/scroll.schema.json",
+  "schemaVersion": 2,
+  "scrollVersion": "1.0.0",
+  "boxId": "example-box",
+  "modelId": "example-org-example-box",
+  "runtimeId": "example-box-runtime",
+  "version": "1.0.0",
+  "sourceRevision": "example-source-1.0.0",
+  "target": {
+    "platform": "linux",
+    "arch": "x86_64",
+    "accelerator": "cpu"
+  },
+  "compatibility": {
+    "minHostAppVersion": "1.0.0"
+  },
+  "pythonVersion": "3.11",
+  "pixiVersion": "0.73.0",
+  "pythonEntryPoint": "venv/bin/python",
+  "modelCacheSubdir": "model-cache/example-box",
+  "environment": {},
+  "assetBaseUrl": "https://example.org/boxes",
+  "assets": [],
+  "selfTest": {
+    "imports": [
+      "json"
+    ],
+    "files": [
+      "entrypoint.py"
+    ]
+  },
+  "weights": "embed",
+  "localFiles": [
+    {
+      "sourcePath": "box-entrypoints/example-box/linux-x86_64-cpu/entrypoint.py",
+      "relativePath": "entrypoint.py",
+      "sha256": "90e0ccc762ba410dc1cda984a80b38869dd846c9d3097f175ea166c43d74b38c"
+    }
+  ],
+  "execution": {
+    "kind": "python-script",
+    "script": "entrypoint.py",
+    "defaultArgs": []
+  }
+}
