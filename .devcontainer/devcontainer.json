@@ -1,0 +1,29 @@
+{
+  "name": "Build a Scrollcase box",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "security.workspace.trust.startupPrompt": "always",
+
+        "workbench.editorAssociations": {
+          "*.md": "vscode.markdown.preview.editor"
+        },
+
+        "files.exclude": {
+          ".devcontainer": true,
+          ".gitignore": true,
+          ".gitattributes": true,
+          "LICENSE": true,
+          "node_modules": true
+        }
+      }
+    },
+
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    }
+  }
+}
