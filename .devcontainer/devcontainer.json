@@ -12,6 +12,7 @@
 
         "files.exclude": {
           ".devcontainer": true,
+          ".vscode": true,
           ".gitignore": true,
           ".gitattributes": true,
           "LICENSE": true,

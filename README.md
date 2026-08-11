@@ -32,7 +32,12 @@ Commit the generated project and lock before building:
 ```sh
 git add .
 git commit -m "Initialize Scrollcase example"
+git status --short
 ```
+
+The final command must print nothing: the scroll, lock, generated entry point, and consumer
+templates now belong to the demo commit. This is what lets Scrollcase record honest provenance;
+`--allow-dirty` is neither needed nor used in this walkthrough.
 
 ## 4. [Create a signing key](https://scrollcase.dev/reference/cli#keygen)
 
@@ -65,9 +70,40 @@ verified.
 - Run the box with [`scrollcase run`](https://scrollcase.dev/reference/cli#run).
 - Or use the shorter [box-run demo](https://scrollcase.dev/demos/box-run-demo) if you only want to
   verify and run an already-built box.
-- Try the generated Node or Python templates in `consumer-templates/`; see the
-  [consumer APIs](https://scrollcase.dev/reference/api).
 - Create a real project scroll with [`scrollcase new scroll`](https://scrollcase.dev/reference/cli#new).
 - Diagnose a build machine with [`scrollcase doctor`](https://scrollcase.dev/reference/cli#doctor).
 - Review dependency licences with [`scrollcase audit`](https://scrollcase.dev/reference/cli#audit).
 - Read the complete [Quickstart](https://scrollcase.dev/getting-started/quickstart).
+
+## Run the generated consumers
+
+After the build, replace `<target>` and `<hash>` in the generated template you want to use. The
+non-interactive `init` command above creates all three templates but skips their optional dependency
+installation, so install the consumer you want before running it.
+
+### Node
+
+```sh
+npm install scrollcase
+npm install --save-dev tsx typescript
+npx tsx consumer-templates/run-box.ts
+```
+
+### Python
+
+```sh
+python -m pip install scrollcase-consumer
+python consumer-templates/run_box.py
+```
+
+### Rust
+
+The Rust template requires Rust and Cargo, which are not installed by this Codespace.
+
+```sh
+cargo add --manifest-path consumer-templates/rust/Cargo.toml scrollcase-consumer
+cargo run --manifest-path consumer-templates/rust/Cargo.toml
+```
+
+Each consumer verifies the local signed release and box before running its signed entry point. See
+the [consumer APIs](https://scrollcase.dev/reference/api) for application integration details.
