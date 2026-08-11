@@ -1,29 +1,25 @@
 {
   "name": "Build a Scrollcase box",
 
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postAttachCommand": "code --reuse-window README.md",
+
   "customizations": {
     "vscode": {
       "settings": {
-        "security.workspace.trust.startupPrompt": "always",
-
         "workbench.editorAssociations": {
-          "*.md": "vscode.markdown.preview.editor"
+          "README.md": "vscode.markdown.preview.editor"
         },
 
         "files.exclude": {
           ".devcontainer": true,
+          ".vscode": true,
           ".gitignore": true,
           ".gitattributes": true,
           "LICENSE": true,
           "node_modules": true
         }
       }
-    },
-
-    "codespaces": {
-      "openFiles": [
-        "README.md"
-      ]
     }
   }
 }
