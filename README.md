@@ -1,7 +1,6 @@
 # Build a Scrollcase box
 
-Paste these commands into the terminal to create, sign, build, verify, and run a small Linux CPU
-box.
+Follow these steps to create, sign, build, verify, and run a small Linux CPU box.
 
 ## 1. Install Scrollcase CLI
 
